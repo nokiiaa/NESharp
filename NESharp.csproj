@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{254DDA3F-C8F5-4BEE-BA6B-52C7BD7D4EC5}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NESharp</RootNamespace>
+    <AssemblyName>NE#</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="sfmlnet-audio-2, Version=2.2.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Release\sfmlnet-audio-2.dll</HintPath>
+    </Reference>
+    <Reference Include="sfmlnet-graphics-2, Version=2.2.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Release\sfmlnet-graphics-2.dll</HintPath>
+    </Reference>
+    <Reference Include="sfmlnet-system-2, Version=2.2.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Release\sfmlnet-system-2.dll</HintPath>
+    </Reference>
+    <Reference Include="sfmlnet-window-2, Version=2.2.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Release\sfmlnet-window-2.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="NES\CPU\BreakException.cs" />
+    <Compile Include="NES\CPU\CPU.cs" />
+    <Compile Include="NES\CPU\InstructionArray.cs" />
+    <Compile Include="NES\CPU\Instructions\ALR.cs" />
+    <Compile Include="NES\CPU\Instructions\ANC.cs" />
+    <Compile Include="NES\CPU\Instructions\ARR.cs" />
+    <Compile Include="NES\CPU\Instructions\AXS.cs" />
+    <Compile Include="NES\CPU\Instructions\BIT.cs" />
+    <Compile Include="NES\CPU\Instructions\Branches.cs" />
+    <Compile Include="NES\CPU\Instructions\DCP.cs" />
+    <Compile Include="NES\CPU\Instructions\IGN.cs" />
+    <Compile Include="NES\CPU\Instructions\ISC.cs" />
+    <Compile Include="NES\CPU\Instructions\JSR.cs" />
+    <Compile Include="NES\CPU\Instructions\CPY.cs" />
+    <Compile Include="NES\CPU\Instructions\CPX.cs" />
+    <Compile Include="NES\CPU\Instructions\CMP.cs" />
+    <Compile Include="NES\CPU\Instructions\ASL.cs" />
+    <Compile Include="NES\CPU\Instructions\LAX.cs" />
+    <Compile Include="NES\CPU\Instructions\LSR.cs" />
+    <Compile Include="NES\CPU\Instructions\RLA.cs" />
+    <Compile Include="NES\CPU\Instructions\ROR.cs" />
+    <Compile Include="NES\CPU\Instructions\ROL.cs" />
+    <Compile Include="NES\CPU\Instructions\RRA.cs" />
+    <Compile Include="NES\CPU\Instructions\RTI.cs" />
+    <Compile Include="NES\CPU\Instructions\SAX.cs" />
+    <Compile Include="NES\CPU\Instructions\SBC.cs" />
+    <Compile Include="NES\CPU\Instructions\BRK.cs" />
+    <Compile Include="NES\CPU\Instructions\DEY.cs" />
+    <Compile Include="NES\CPU\Instructions\PLP.cs" />
+    <Compile Include="NES\CPU\Instructions\PHP.cs" />
+    <Compile Include="NES\CPU\Instructions\PLA.cs" />
+    <Compile Include="NES\CPU\Instructions\PHA.cs" />
+    <Compile Include="NES\CPU\Instructions\INY.cs" />
+    <Compile Include="NES\CPU\Instructions\INX.cs" />
+    <Compile Include="NES\CPU\Instructions\DEX.cs" />
+    <Compile Include="NES\CPU\Instructions\LDY.cs" />
+    <Compile Include="NES\CPU\Instructions\RTS.cs" />
+    <Compile Include="NES\CPU\Instructions\SKB.cs" />
+    <Compile Include="NES\CPU\Instructions\SLO.cs" />
+    <Compile Include="NES\CPU\Instructions\SRE.cs" />
+    <Compile Include="NES\CPU\Instructions\STA.cs" />
+    <Compile Include="NES\CPU\Instructions\STY.cs" />
+    <Compile Include="NES\CPU\Instructions\STX.cs" />
+    <Compile Include="NES\CPU\Instructions\TSX.cs" />
+    <Compile Include="NES\CPU\Instructions\TYA.cs" />
+    <Compile Include="NES\CPU\Instructions\TAY.cs" />
+    <Compile Include="NES\CPU\Instructions\TXS.cs" />
+    <Compile Include="NES\CPU\Instructions\TXA.cs" />
+    <Compile Include="NES\CPU\Instructions\TAX.cs" />
+    <Compile Include="NES\CPU\Instructions\ORA.cs" />
+    <Compile Include="NES\CPU\Instructions\NOP.cs" />
+    <Compile Include="NES\CPU\Instructions\SED.cs" />
+    <Compile Include="NES\CPU\Instructions\CLD.cs" />
+    <Compile Include="NES\CPU\Instructions\CLV.cs" />
+    <Compile Include="NES\CPU\Instructions\SEI.cs" />
+    <Compile Include="NES\CPU\Instructions\CLI.cs" />
+    <Compile Include="NES\CPU\Instructions\SEC.cs" />
+    <Compile Include="NES\CPU\Instructions\CLC.cs" />
+    <Compile Include="NES\CPU\Instructions\INC.cs" />
+    <Compile Include="NES\CPU\Instructions\EOR.cs" />
+    <Compile Include="NES\CPU\Instruction.cs" />
+    <Compile Include="NES\CPU\Instructions\ADC.cs" />
+    <Compile Include="NES\CPU\Instructions\AND.cs" />
+    <Compile Include="NES\CPU\Instructions\DEC.cs" />
+    <Compile Include="NES\CPU\Instructions\JMP.cs" />
+    <Compile Include="NES\CPU\Instructions\LDX.cs" />
+    <Compile Include="NES\CPU\Instructions\LDA.cs" />
+    <Compile Include="NES\Game.cs" />
+    <Compile Include="NES\Input\Controller.cs" />
+    <Compile Include="NES\Input\Joypad.cs" />
+    <Compile Include="NES\Mappers\Mapper.cs" />
+    <Compile Include="NES\Mappers\NROM.cs" />
+    <Compile Include="NES\BaseMemory.cs" />
+    <Compile Include="NES\PPU\PPU.cs" />
+    <Compile Include="NES\ROM.cs" />
+    <Compile Include="NESharpMain.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Baseclass.Contrib.Nuget.Output.1.0.0\build\net40\Baseclass.Contrib.Nuget.Output.targets" Condition="Exists('..\packages\Baseclass.Contrib.Nuget.Output.1.0.0\build\net40\Baseclass.Contrib.Nuget.Output.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Данный проект ссылается на пакеты NuGet, отсутствующие на этом компьютере. Используйте восстановление пакетов NuGet, чтобы скачать их.  Дополнительную информацию см. по адресу: http://go.microsoft.com/fwlink/?LinkID=322105. Отсутствует следующий файл: {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Baseclass.Contrib.Nuget.Output.1.0.0\build\net40\Baseclass.Contrib.Nuget.Output.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Baseclass.Contrib.Nuget.Output.1.0.0\build\net40\Baseclass.Contrib.Nuget.Output.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
